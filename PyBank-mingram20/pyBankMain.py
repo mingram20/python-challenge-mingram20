@@ -46,7 +46,7 @@ with open(csv_path, 'r', newline='') as csvfile:
     print(f"Greatest Decrease in Profits: {totalMonths[maxLossMonth]} {str('${:,.2f}'.format(maxLoss))}")
 
     # Output files
-textFile = os.path.join("Financial_Analysis_Summary.txt")
+textFile = os.path.join("pyBankSummary.txt")
 
 with open(textFile,"w") as file:
     
