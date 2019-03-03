@@ -54,9 +54,9 @@ with open(textFile,"w") as file:
     # print total months
     file.write(f"The total number of months is:  {len(totalMonths)}\n")
     # print total profit loss
-    file.write(f"The total profit/loss is ${sum(totalPL)}\n")
+    file.write(f"The total profit/loss is {str('${:,.2f}'.format(sum(totalPL)))}\n")
     # print average g/l
-    file.write(f"The average monthly profit/loss is: ${round(sum(monthlyPLChange)/len(monthlyPLChange),2)}\n")
+    file.write(f"The average monthly profit/loss is: {str('${:,.2f}'.format(round(sum(monthlyPLChange))/(len(monthlyPLChange))))}\n")
     # print max increase in profits
     file.write(f"Greatest Increase in Profits: {totalMonths[maxGainMonth]} {str('${:,.2f}'.format(maxGain))}\n")
     # print max losses in losses
