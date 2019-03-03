@@ -14,8 +14,7 @@ with open(csv_path, 'r', newline='') as csvfile:
     # make CSV reader
     pyBankReader = csv.reader(csvfile, delimiter=',')
     # skip header
-    next(pyBankReader, None)
-
+    header = next(pyBankReader)
     # iterrate through all rows
     for row in pyBankReader:
         # populate lists
@@ -37,9 +36,9 @@ with open(csv_path, 'r', newline='') as csvfile:
     # print total months
     print(f"The total number of months is:  {len(totalMonths)}")
     # print total profit loss
-    print(f"The total profit/loss is ${sum(totalPL)}")
+    print(f"The total profit/loss is {'${:,.2f}'.format(sum(totalPL))}")
     # print average g/l
-    print(f"The average monthly profit/loss is: ${round(sum(monthlyPLChange)/len(monthlyPLChange),2)}")
+    print(f"The average monthly profit/loss is: {'${:,.2f}'.format(round(sum(monthlyPLChange)/len(monthlyPLChange),2))}")
     # print max increase in profits
     print(f"Greatest Increase in Profits: {totalMonths[maxGainMonth]} {str('${:,.2f}'.format(maxGain))}")
     # print max losses in losses
